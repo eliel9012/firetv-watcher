@@ -1,0 +1,13 @@
+[Unit]
+Description=Fire TV Watcher - Detecta TV ligada e app ativo via ADB
+After=network-online.target
+
+[Service]
+EnvironmentFile=/etc/default/firetv-watcher
+ExecStart=/usr/bin/env python3 /usr/local/bin/firetv_watcher.py
+User=pi
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
