@@ -1,0 +1,7 @@
+# Arquivos locais / segredos
+/config/*.env
+/config/*local*
+/etc/default/firetv-watcher
+*.log
+*.jsonl
+__pycache__/
