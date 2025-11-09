@@ -21,7 +21,7 @@ echo -e "\n== MEDIA SESSION =="
 adb -s "$HOST:$PORT" shell dumpsys media_session | egrep -m3 'state=' || true
 
 echo -e "\n== AUDIO (focus) =="
-adb -s "$HOST;$PORT" shell dumpsys audio | egrep -m5 -i 'AUDIOFOCUS|Music|media' || true
+adb -s "$HOST:$PORT" shell dumpsys audio | egrep -m5 -i 'AUDIOFOCUS|Music|media' || true
 
 echo -e "\n== TOP APP =="
 adb -s "$HOST:$PORT" shell dumpsys window windows | awk '/mCurrentFocus=/{print; exit}' || true
